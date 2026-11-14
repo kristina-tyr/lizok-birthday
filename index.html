@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090a12">
+<title>Для Неймовірної Людинки· З Днем народження</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700;800&display=swap');
+:root{
+  --bg:#090a12;
+  --panel:#111421;
+  --text:#f5f5fa;
+  --muted:#a3a7b8;
+  --violet:#9b7bff;
+  --cyan:#5ce1e6;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:Manrope,sans-serif;
+  overflow-x:hidden;
+}
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:-1;
+  background:
+    radial-gradient(ellipse at 15% 20%,#4e2c9a33,transparent 38%),
+    radial-gradient(ellipse at 85% 70%,#087c8730,transparent 36%),
+    linear-gradient(145deg,#090a12,#0b0d18 60%,#080a10);
+}
+.noise{
+  position:fixed;
+  inset:0;
+  opacity:.035;
+  pointer-events:none;
+  z-index:10;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E");
+}
+nav{
+  height:76px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  max-width:1120px;
+  margin:auto;
+  padding:0 26px;
+  border-bottom:1px solid #ffffff12;
+}
+.logo{
+  font:700 15px Unbounded;
+  letter-spacing:.08em;
+}
+.logo span{color:var(--violet)}
+.nav-tag{
+  font-size:11px;
+  letter-spacing:.2em;
+  color:var(--muted);
+}
+main{
+  max-width:1120px;
+  margin:auto;
+  padding:0 26px;
+}
+.hero{
+  min-height:calc(100vh - 76px);
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  align-items:center;
+  gap:40px;
+  padding:65px 0 80px;
+}
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  color:#c7b9ff;
+  font-size:11px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  border:1px solid #9b7bff55;
+  padding:10px 14px;
+  border-radius:99px;
+  background:#9b7bff12;
+}
+.dot{
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:var(--cyan);
+  box-shadow:0 0 14px var(--cyan);
+}
+h1{
+  font:800 clamp(42px,7vw,88px)/.98 Unbounded;
+  margin:28px 0 22px;
+  letter-spacing:-.075em;
+}
+h1 .gradient{
+  background:linear-gradient(100deg,#fff 10%,#bba8ff 48%,#66e5e8 95%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+.lead{
+  max-width:520px;
+  color:var(--muted);
+  font-size:17px;
+  line-height:1.85;
+}
+.countdown{
+  margin-top:28px;
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+}
+.cd-block{
+  min-width:72px;
+  padding:14px 12px;
+  border-radius:16px;
+  background:#ffffff0a;
+  border:1px solid #ffffff18;
+  text-align:center;
+}
+.cd-num{
+  font:700 28px Unbounded;
+  letter-spacing:-.03em;
+  background:linear-gradient(100deg,#fff,#bba8ff);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+.cd-label{
+  font-size:10px;
+  letter-spacing:.18em;
+  color:var(--muted);
+  margin-top:4px;
+  text-transform:uppercase;
+}
+.cd-done{
+  display:none;
+  margin-top:20px;
+  font:600 15px Manrope;
+  color:#c7b9ff;
+}
+.actions{
+  display:flex;
+  gap:13px;
+  flex-wrap:wrap;
+  margin-top:28px;
+}
+button{
+  font:700 13px Manrope;
+  cursor:pointer;
+  border:0;
+  border-radius:13px;
+  padding:16px 21px;
+  transition:.25s;
+}
+.primary{
+  color:#090a12;
+  background:linear-gradient(110deg,#c1adff,#69e5e8);
+  box-shadow:0 8px 35px #9b7bff35;
+}
+.primary:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 42px #9b7bff55;
+}
+.secondary{
+  color:#e7e7f0;
+  background:#ffffff0a;
+  border:1px solid #ffffff20;
+}
+.secondary:hover{background:#ffffff14}
+.visual{
+  height:470px;
+  position:relative;
+  display:grid;
+  place-items:center;
+}
+.hero-photo{
+  width:min(380px,90%);
+  aspect-ratio:3/4;
+  object-fit:cover;
+  border-radius:28px;
+  box-shadow:0 30px 80px #00000088,0 0 0 1px #ffffff18;
+  transform:rotate(-3deg);
+  transition:.4s;
+}
+.hero-photo:hover{transform:rotate(0deg) scale(1.02)}
+.float-label{
+  position:absolute;
+  padding:11px 15px;
+  background:#151827dd;
+  border:1px solid #ffffff20;
+  border-radius:12px;
+  font-size:11px;
+  letter-spacing:.12em;
+  backdrop-filter:blur(10px);
+}
+.label-one{top:40px;right:10px}
+.label-two{bottom:50px;left:5px;color:#76e8e8}
+.scroll{
+  font-size:10px;
+  letter-spacing:.22em;
+  color:#777d91;
+  text-transform:uppercase;
+  margin-top:25px;
+}
+.section{
+  padding:65px 0 85px;
+  border-top:1px solid #ffffff12;
+}
+.kicker{
+  color:var(--cyan);
+  font-size:10px;
+  letter-spacing:.25em;
+  text-transform:uppercase;
+}
+h2{
+  font:700 clamp(28px,4vw,42px) Unbounded;
+  letter-spacing:-.05em;
+  margin:14px 0 12px;
+}
+.section-intro{
+  color:var(--muted);
+  line-height:1.75;
+  max-width:580px;
+  font-size:16px;
+}
+.gallery{
+  display:grid;
+  grid-template-columns:1.15fr 1fr 1fr;
+  gap:16px;
+  margin-top:36px;
+}
+.gallery img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:20px;
+  border:1px solid #ffffff14;
+  transition:.35s;
+}
+.gallery img:hover{
+  transform:scale(1.02);
+  border-color:#9b7bff66;
+}
+.g1{min-height:460px}
+.g2,.g3{min-height:460px}
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+  margin-top:30px;
+}
+.card{
+  min-height:175px;
+  padding:23px;
+  border-radius:20px;
+  background:linear-gradient(145deg,#171a2a,#10131e);
+  border:1px solid #ffffff12;
+  transition:.3s;
+  position:relative;
+  overflow:hidden;
+}
+.card:hover{
+  transform:translateY(-6px);
+  border-color:#9b7bff77;
+}
+.card .num{
+  font:700 11px Unbounded;
+  color:#a895ff;
+}
+.card h3{
+  font:700 17px Unbounded;
+  margin:23px 0 9px;
+}
+.card p{
+  font-size:13px;
+  line-height:1.65;
+  color:var(--muted);
+  margin:0;
+}
+.surprise{
+  margin:10px 0 90px;
+  padding:clamp(26px,5vw,55px);
+  border-radius:26px;
+  border:1px solid #9b7bff45;
+  background:
+    radial-gradient(ellipse at 90% 10%,#6043a733,transparent 45%),
+    linear-gradient(140deg,#15182a,#0f1720);
+  text-align:center;
+}
+.surprise h2{margin-bottom:12px}
+.surprise p{
+  color:var(--muted);
+  line-height:1.7;
+  max-width:520px;
+  margin:0 auto 24px;
+}
+.hidden-message{
+  display:none;
+  max-width:640px;
+  margin:28px auto 0;
+  padding:28px 32px;
+  border-radius:18px;
+  background:#ffffff09;
+  border:1px solid #ffffff1c;
+  line-height:1.9;
+  font-size:16px;
+  text-align:left;
+  animation:appear .6s ease;
+}
+.hidden-message.show{display:block}
+@keyframes appear{
+  from{opacity:0;transform:translateY(12px)}
+  to{opacity:1;transform:none}
+}
+footer{
+  padding:25px;
+  text-align:center;
+  color:#73788a;
+  font-size:11px;
+  letter-spacing:.12em;
+  border-top:1px solid #ffffff12;
+}
+.spark{
+  position:fixed;
+  pointer-events:none;
+  width:7px;
+  height:7px;
+  border-radius:2px;
+  z-index:20;
+  animation:burst 1.5s ease-out forwards;
+}
+@keyframes burst{
+  to{
+    transform:translate(var(--x),var(--y)) rotate(540deg);
+    opacity:0;
+  }
+}
+/* Temporary birthday surprise lock screen */
+body.locked{overflow:hidden}
+body.locked nav,body.locked main,body.locked footer{display:none}
+.lock-screen{
+  min-height:100svh;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:28px 18px;
+  position:relative;
+  z-index:2;
+}
+body.locked .lock-screen{display:flex}
+.lock-card{
+  width:min(100%,620px);
+  padding:clamp(28px,6vw,58px);
+  border:1px solid #9b7bff45;
+  border-radius:28px;
+  background:radial-gradient(ellipse at 90% 8%,#6043a733,transparent 42%),linear-gradient(145deg,#171a2aee,#10131eee);
+  box-shadow:0 30px 100px #0008,0 0 70px #9b7bff12;
+  text-align:center;
+  backdrop-filter:blur(14px);
+}
+.lock-icon{font-size:38px;color:var(--cyan);margin:26px 0 12px;text-shadow:0 0 28px #5ce1e688;animation:lockFloat 2.8s ease-in-out infinite}
+@keyframes lockFloat{50%{transform:translateY(-7px) rotate(8deg)}}
+.lock-kicker{font-size:10px;letter-spacing:.28em;color:var(--cyan);margin:0 0 12px}
+.lock-title{font:800 clamp(38px,8vw,70px)/1.08 Unbounded;margin:0 0 20px;letter-spacing:-.07em}
+.lock-title .gradient{background:linear-gradient(100deg,#fff 10%,#bba8ff 48%,#66e5e8 95%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lock-copy{max-width:460px;margin:0 auto;color:var(--muted);font-size:15px;line-height:1.8}
+.lock-hint{min-height:24px;margin:15px auto 0;color:#c7b9ff;font-size:12px;line-height:1.6}
+.lock-card .countdown{justify-content:center;margin:26px 0 22px}
+.lock-card .cd-block{min-width:86px;padding:15px 13px}
+.lock-card .cd-num{font-size:clamp(24px,5vw,34px)}
+.lock-button{min-width:210px}
+.lock-foot{margin-top:25px;color:#777d91;font-size:9px;letter-spacing:.22em}
+@media(max-width:860px){
+  .lock-card{padding:30px 20px}
+  .lock-card .cd-block{min-width:74px}
+}
+@media(max-width:860px){
+  .hero{grid-template-columns:1fr;padding-top:50px;gap:30px}
+  .visual{height:auto;order:-1}
+  .hero-photo{width:min(320px,85%);margin:0 auto}
+  .gallery{grid-template-columns:1fr;gap:14px}
+  .g1,.g2,.g3{min-height:340px}
+  .cards{grid-template-columns:1fr}
+  .card{min-height:auto}
+  .nav-tag{font-size:9px}
+  .lead{font-size:15px}
+  .cd-num{font-size:22px}
+}
+</style>
+</head>
+<body class="locked">
+<div class="noise"></div>
+<section class="lock-screen" id="lock-screen" aria-live="polite">
+  <div class="lock-card">
+    <div class="eyebrow"><span class="dot"></span> СЕКРЕТНИЙ ДОСТУП</div>
+    <div class="lock-icon" aria-hidden="true">✦</div>
+    <p class="lock-kicker">УВАГА, ЛІЗОК</p>
+    <h1 class="lock-title">СЮРПРИЗ<br><span class="gradient">ЗАЧЕКАЄ.</span></h1>
+    <p class="lock-copy">Тут дещо дуже особливе. Але система вирішила, що тобі треба трохи інтриги перед тим, як усе побачити 👀</p>
+    <p class="lock-hint" id="lock-hint">Доступ відкриється автоматично. Так, це офіційно наймиліше очікування.</p>
+    <div class="countdown" id="countdown">
+      <div class="cd-block"><div class="cd-num" id="cd-h">00</div><div class="cd-label">год</div></div>
+      <div class="cd-block"><div class="cd-num" id="cd-m">00</div><div class="cd-label">хв</div></div>
+      <div class="cd-block"><div class="cd-num" id="cd-s">00</div><div class="cd-label">сек</div></div>
+    </div>
+    <button class="primary lock-button" id="try-unlock" type="button">Перевірити доступ ✨</button>
+    <div class="lock-foot">UNLOCK TIME · 15.11.2026 · 00:00</div>
+  </div>
+</section>
+<nav>
+  <div class="logo">ДЛЯ <span>ЛІЗОК</span></div>
+  <div class="nav-tag">ТВІЙ ДЕНЬ · 15.11.2026</div>
+</nav>
+<main>
+  <section class="hero">
+    <div>
+      <div class="eyebrow"><span class="dot"></span> СЬОГОДНІ ТВІЙ ДЕНЬ</div>
+      <h1>HEY,<br><span class="gradient">ЛІЗОК.</span></h1>
+      <p class="lead">Я просто хотіла тобі сказати, що ти дуже чудова дівчинка. Сьогодні твій день — і я дуже хочу, щоб він був теплим, легким і по-справжньому твоїм. Без зайвого головняку, з тим, що реально радує.</p>
+
+      <div class="actions">
+        <button class="primary" onclick="document.querySelector('#surprise').scrollIntoView({behavior:'smooth'})">Відкрити послання ↗</button>
+        <button class="secondary" onclick="party()">тицяййййй✦</button>
+      </div>
+      <div class="scroll">ЛИСТАЙ НИЖЧЕ ↓</div>
+    </div>
+    <div class="visual">
+      <img src="IMG_1619.jpg" alt="Лізок" class="hero-photo">
+      <div class="float-label label-one">LEVEL UP +1</div>
+      <div class="float-label label-two">★ MAIN CHARACTER</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="kicker">01 / ТИ</div>
+    <h2></h2>
+    <p class="section-intro">Просто моментики, де ти така, якою є. Справжня, смілива, неймовірна.</p>
+    <div class="gallery">
+      <img src="IMG_1617.jpg" alt="Лізок на заході" class="g1">
+      <img src="IMG_1618.jpg" alt="Лізок на вулиці" class="g2">
+      <img src="IMG_1616.jpg" alt="Лізок у білому" class="g3">
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="kicker">02 / ВІД МЕНЕ</div>
+    <h2>Що я тобі бажаю.</h2>
+    <p class="section-intro">Не список з інтернету. Те, що справді хочеться сказати тобі.</p>
+    <div class="cards">
+      <article class="card">
+        <div class="num">01 — СПОКІЙ</div>
+        <h3>Більше тиші всередині</h3>
+        <p>Щоб менше крутилося в голові зайвого, а більше було просто «мені добре».</p>
+      </article>
+      <article class="card">
+        <div class="num">02 — СВОЇ</div>
+        <h3>Люди, з якими легко</h3>
+        <p>Щоб поруч були ті, з ким не треба грати роль. З ким можна мовчати і сміятися однаково комфортно.</p>
+      </article>
+      <article class="card">
+        <div class="num">03 — МОМЕНТИ</div>
+        <h3>Маленькі радості</h3>
+        <p>Не обов’язково великі перемоги. Просто дні, які хочеться згадати з теплом.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="surprise" id="surprise">
+    <div class="kicker">03 / ДЛЯ ТЕБЕ</div>
+    <h2>Особисте послання.</h2>
+    <p>Я написала це саме тобі. Без загальних слів.</p>
+    <button class="primary" id="reveal" onclick="reveal()">Відкрити ✨</button>
+    <div class="hidden-message" id="message">
+      Лізок,<br><br>
+      З Днем народження.<br><br>
+      Я хочу, щоб ти знала: ти важлива. Не тому, що так прийнято говорити в цей день, а тому що поруч з тобою стає тепліше і яскравіше.<br><br>
+      Бажаю тобі здоров’я, справжнього спокою всередині і щоб твої бажання виконувалися — не обов’язково одразу і гучно, а так, як тобі потрібно. Щоб можливості з’являлися вчасно, а життя іноді підкидало приємні сюрпризи просто так.<br><br>
+      Залишайся собою. Яскравою, живою, неповторною. Мені це дуже подобається в тобі.<br><br>
+      Нехай цей рік буде твоїм.<br><br>
+      З любов’ю,<br>
+      я
+    </div>
+  </section>
+</main>
+<footer> · 2026</footer>
+<script>
+function party(times = 1){
+  const colors = ['#a88cff','#5ce1e6','#ffffff','#f7cf75','#ff9ecd'];
+  for(let t = 0; t < times; t++){
+    setTimeout(() => {
+      for(let i = 0; i < 90; i++){
+        const s = document.createElement('i');
+        s.className = 'spark';
+        s.style.left = (window.innerWidth * 0.5 + (Math.random() - 0.5) * 140) + 'px';
+        s.style.top = (window.innerHeight * 0.35 + (Math.random() - 0.5) * 100) + 'px';
+        s.style.background = colors[Math.floor(Math.random() * colors.length)];
+        s.style.setProperty('--x', ((Math.random() - 0.5) * window.innerWidth * 0.95) + 'px');
+        s.style.setProperty('--y', ((Math.random() - 0.5) * window.innerHeight * 0.95) + 'px');
+        document.body.appendChild(s);
+        setTimeout(() => s.remove(), 1600);
+      }
+    }, t * 400);
+  }
+}
+
+function reveal(){
+  document.getElementById('message').classList.add('show');
+  document.getElementById('reveal').textContent = 'Відкрито ✓';
+  party(1);
+}
+
+// The full birthday page unlocks at 00:00 on 15 November 2026 (local time).
+const target = new Date(2026, 10, 15, 0, 0, 0); // month is 0-indexed
+let celebrated = false;
+const lockHint = document.getElementById('lock-hint');
+const tryUnlock = document.getElementById('try-unlock');
+
+tryUnlock.addEventListener('click', () => {
+  const now = new Date();
+  if (now < target) {
+    const lines = [
+      'Хитра спроба 😏 Але сюрприз поки під замочком.',
+      'Система каже: «Терпіння, Лізок, усе найцікавіше попереду» 💜',
+      'Доступ ще закритий. Можеш натиснути ще раз, але час швидше не піде ✨',
+      'Тут не пароль потрібен, а буквально трішечки часу 👀'
+    ];
+    lockHint.textContent = lines[Math.floor(Math.random() * lines.length)];
+    tryUnlock.textContent = 'Ну будь ла-а-аска? 🥺';
+  } else {
+    unlockPage();
+  }
+});
+
+function unlockPage(){
+  if (!document.body.classList.contains('locked')) return;
+  document.body.classList.remove('locked');
+  document.getElementById('lock-screen').style.display = 'none';
+  if (!celebrated) {
+    celebrated = true;
+    party(3);
+  }
+}
+
+function updateCountdown(){
+  const diff = target - new Date();
+  if (diff <= 0) {
+    document.getElementById('cd-h').textContent = '00';
+    document.getElementById('cd-m').textContent = '00';
+    document.getElementById('cd-s').textContent = '00';
+    unlockPage();
+    return;
+  }
+  const h = Math.floor(diff / 3600000);
+  const m = Math.floor((diff % 3600000) / 60000);
+  const s = Math.floor((diff % 60000) / 1000);
+  document.getElementById('cd-h').textContent = String(h).padStart(2, '0');
+  document.getElementById('cd-m').textContent = String(m).padStart(2, '0');
+  document.getElementById('cd-s').textContent = String(s).padStart(2, '0');
+}
+
+updateCountdown();
+setInterval(updateCountdown, 250);
+</script>
+</body>
+</html>
